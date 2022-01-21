@@ -1,0 +1,1 @@
+DELETE FROM analysis_data WHERE ga_yearMonth = {}
