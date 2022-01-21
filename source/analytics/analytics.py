@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
+from variables.analytics_creds import view_id
+from variables.analytics_creds import key_location
 
 
 def format_summary(response):
@@ -89,8 +91,8 @@ def run_report(body, credentials_file):
     return format_report(response)
 
 
-your_view_id = '240457500'
-ga_keys = 'C:/Users/Devesh/PycharmProjects/interview/variables/client_secrets.json'
+your_view_id = view_id
+ga_keys = key_location
 
 body = {'reportRequests': [{'viewId': your_view_id,
                             'dateRanges': [{'startDate': '2021-01-01', 'endDate': '2022-01-19'}],
